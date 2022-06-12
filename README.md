@@ -9,10 +9,10 @@ curl https://raw.githubusercontent.com/digiraldo/mi-linux/main/milinux.sh | bash
 
 ```
 sudo apt install curl
-curl https://raw.githubusercontent.com/digiraldo/mi-linux/master/milinux.sh | bash
+curl https://raw.githubusercontent.com/digiraldo/mi-linux/main/milinux.sh | bash
 ```
 ```
-wget https://raw.githubusercontent.com/digiraldo/mi-linux/master/milinux.sh
+wget https://raw.githubusercontent.com/digiraldo/mi-linux/main/milinux.sh
 chmod +x milinux.sh
 ./milinux.sh
 ```
