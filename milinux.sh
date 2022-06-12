@@ -85,3 +85,7 @@ sudo apt install nodejs
 
 node --version
 npm --version
+
+## Instalar dbeaver para sql
+# https://blonder413.wordpress.com/2021/05/20/instalar-dbeaver-ce-en-ubuntu-20-04/
+sudo snap install dbeaver-ce
