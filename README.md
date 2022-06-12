@@ -6,10 +6,13 @@ Configuracion de mi linux para desarrollo
 `curl https://raw.githubusercontent.com/digiraldo/mi-linux/main/milinux.sh | bash`
 
 ```
-curl https://raw.githubusercontent.com/digiraldo/mi-linux/main/milinux.sh | bash
+curl https://raw.githubusercontent.com/digiraldo/mi-linux/maser/milinux.sh | bash
 ```
-
-
+```
+wget https://raw.githubusercontent.com/digiraldo/mi-linux/maser/milinux.sh
+chmod +x milinux.sh
+./milinux.sh
+```
 
 ## Configuracion sass y gulp con nodejs
 
