@@ -6,6 +6,7 @@ Configuracion de mi linux para desarrollo
 `curl https://raw.githubusercontent.com/digiraldo/mi-linux/main/milinux.sh | bash`
 
 ```
+sudo apt install curl
 curl https://raw.githubusercontent.com/digiraldo/mi-linux/maser/milinux.sh | bash
 ```
 ```
