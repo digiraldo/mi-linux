@@ -2,7 +2,27 @@
 
 
 
+## Instalar VSCODE
+# Actualizar el índice de paquetes e instalar las dependencias necesarias 
+sudo apt update; sudo apt install software-properties-common apt-transport-https wget
 
+# Importar la clave GPG de Microsoft utilizando wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+
+# habilitar el repositorio de VS Code
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+
+# iniciar la instalación del paquete
+sudo apt install code
+
+
+
+
+
+
+
+
+## Instalar Edge
 # Actualizar Ubuntu
 sudo apt update && sudo apt upgrade -y
 
