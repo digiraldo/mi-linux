@@ -3,32 +3,42 @@
 
 # https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-22-04
 
-echo -e "\n\nActualizando paquetes Apt y cargando ultimos paquetes\n"    
+echo -e "\n\nActualizando paquetes Apt y cargando ultimos paquetes\n"
+sleep 2s
 sudo apt-get update -y && sudo apt-get upgrade -y
 
 echo -e "\n\nInstalando Servidor Web Apache2 Web\n" 
+sleep 2s
 sudo apt-get install apache2 apache2-doc apache2-mpm-prefork apache2-utils libexpat1 ssl-cert -y
 
 echo -e "\n\nInstalación de PHP y requisitos\n"
+sleep 2s
 sudo apt install php libapache2-mod-php php-mysql -y
 
 php -v
+sleep 2s
 
 echo -e "\n\nInstalando MySQL\n"
+sleep 2s
 sudo apt-get install mysql-server mysql-client -y
 
 echo -e "\n\nEjecutando  script de seguridad de mysql\n"
+sleep 2s
 # sudo mysql_secure_installation
 
 echo -e "\n\nPermisos para /var/www\n"
+sleep 2s
 sudo chown -R www-data:www-data /var/www
 echo -e "\n\n Se han establecido permisos.\n"
+sleep 2s
 
 echo -e "\n\nHabilitación de módulos\n"
+sleep 2s
 sudo a2enmod rewrite
 sudo phpenmod mcrypt
 
 echo -e "\n\nReiniciando Apache\n"
+sleep 2s
 sudo service apache2 restart
 
 echo -e "\n\nLAMP Instalación completa"
@@ -89,3 +99,7 @@ npm --version
 ## Instalar dbeaver para sql
 # https://blonder413.wordpress.com/2021/05/20/instalar-dbeaver-ce-en-ubuntu-20-04/
 sudo snap install dbeaver-ce
+
+
+sudo apt install git
+git --version
