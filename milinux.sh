@@ -48,7 +48,8 @@ echo -e "\n\nLAMP Instalación completa"
 
 ## Instalar VSCODE
 # Actualizar el índice de paquetes e instalar las dependencias necesarias 
-sudo apt update; sudo apt install software-properties-common apt-transport-https wget
+sudo apt update
+sudo apt install software-properties-common apt-transport-https wget
 
 # Importar la clave GPG de Microsoft utilizando wget
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
