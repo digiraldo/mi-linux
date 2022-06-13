@@ -217,47 +217,33 @@ pwsh
 
 
 
-
+# https://www.nixcraft.com/t/mysql-failed-error-set-password-has-no-significance-for-user-root-localhost-as-the-authentication-method-used-doesnt-store-authentication-data-in-the-mysql-server-please-consider-using-alter-user/4233
 Print_Style "Reinicias password en mysql" "$RED"
     echo -n "¿Desea reiniciar password en mysql? (y/n)"
     read answer < /dev/tty
     if [ "$answer" != "${answer#[Yy]}" ]; then
       # Recuperar mundo e instalarlo en el servidor
         echo "========================================================================="
-        Print_Style "Iniciando Recuperación con back.sh" "$YELLOW"
+        Print_Style "Iniciando Recuperacion del pass" "$YELLOW"
+        echo "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root1234';"
+        echo "exit"
+        echo "========================================================================="
         echo "========================================================================="
         sleep 3s
-        /bin/bash dirname/minecraftbe/servername/back.sh
+        sudo killall -9 mysql_secure_installation
+        sudo mysql
+    fi
+
+    echo -n "¿Desea configurar seguridad con el nuevo pass? (y/n)"
+    read answer < /dev/tty
+    if [ "$answer" != "${answer#[Yy]}" ]; then
+      # Recuperar mundo e instalarlo en el servidor
+        echo "========================================================================="
+        Print_Style "Recuerde que el pass es root1234" "$YELLOW"
+        echo "========================================================================="
+        sleep 3s
+        sudo mysql_secure_installation
     fi
 
 
 
-echo -e "\n\n Detenga el servidor MySQL\n"
-sudo systemctl stop mysql.service
-
-echo -e "\n\n Estado del servidor MySQL\n"
-sudo systemctl status mysql.service
-sleep 3s
-
-echo -e "\n\n Omita las tablas de subvenciones y la creación de redes\n"
-sudo systemctl set-environment MYSQLD_OPTS=“–skip-networking –skip-grant-tables”
-
-echo -e "\n\n Inicie el servicio MySQL\n"
-sudo systemctl start mysql.service
-
-echo -e "\n\n Confirme el estado del servidor MySQL\n"
-sudo systemctl status mysql.service
-
-
-
-echo -e "\n\n flush privileges\n USE mysql\n ALTER USER ‘root’@‘localhost’ IDENTIFIED BY ‘root1234’\n quit\n"
-
-echo -e "\n\n inicie sesión en el shell de MySQL\n"
-sudo mysql -u root
-
-
-echo -e "\n\n elimine todos los procesos MySQL y reinicie el servicio MySQL\n"
-sudo killall -u mysql
-
-echo -e "\n\n reinicie el servidor MySQL\n"
-sudo systemctl restart mysql.service
