@@ -9,6 +9,9 @@ Configuracion de mi linux para desarrollo
 
 ## Configuracion sass y gulp con nodejs
 
+# Instalar todas las dependencias de package.json
+npm i
+npm install
 
 npm install sass
 
