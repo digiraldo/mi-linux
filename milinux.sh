@@ -159,3 +159,38 @@ sudo apt-get update
 sudo apt-get install -y powershell
 # Start PowerShell
 pwsh
+
+
+echo -e "\n\n Detenga el servidor MySQL\n"
+sudo systemctl stop mysql.service
+
+echo -e "\n\n Estado del servidor MySQL\n"
+udo systemctl status mysql.service
+sleep 3s
+
+echo -e "\n\n Omita las tablas de subvenciones y la creación de redes\n"
+sudo systemctl set-environment MYSQLD_OPTS=“–skip-networking –skip-grant-tables”
+
+echo -e "\n\n Inicie el servicio MySQL\n"
+sudo systemctl start mysql.service
+
+echo -e "\n\n Confirme el estado del servidor MySQL\n"
+udo systemctl status mysql.service
+
+
+
+echo -e "\n\n
+flush privileges\n
+USE mysql\n
+ALTER USER  ‘root’@‘localhost’ IDENTIFIED BY ‘root1234’\n
+quit\n"
+
+echo -e "\n\n inicie sesión en el shell de MySQL\n"
+sudo mysql -u root
+
+
+echo -e "\n\n elimine todos los procesos MySQL y reinicie el servicio MySQL\n"
+sudo killall -u mysql
+
+echo -e "\n\n reinicie el servidor MySQL\n"
+sudo systemctl restart mysql.service
