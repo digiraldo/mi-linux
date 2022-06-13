@@ -3,13 +3,17 @@ Configuracion de mi linux para desarrollo
 
 
 
+`curl https://raw.githubusercontent.com/digiraldo/mi-linux/main/milinux.sh | bash`
 
+```
+curl https://raw.githubusercontent.com/digiraldo/mi-linux/main/milinux.sh | bash
+```
 
 
 
 ## Configuracion sass y gulp con nodejs
 
-# Instalar todas las dependencias de package.json
+### Instalar todas las dependencias de package.json
 npm i
 npm install
 
